@@ -5,13 +5,11 @@ body{
 }
 
 #principal{
-    border: 1px solid red;
-    width: 900px;
+     width: 900px;
 }
 
 #menu {
     background: #c5c5b2;
-    border: 1px solid red;
     padding: 18px;
 }
 
@@ -30,4 +28,14 @@ a {
 
 .centralizar {
     text-align: center;
+}
+
+h3{
+    color: #828271;
+    font-size: 1.2em;
+}
+
+.img-campanha {
+    border: 10px solid #c3c3ae;
+
 }
