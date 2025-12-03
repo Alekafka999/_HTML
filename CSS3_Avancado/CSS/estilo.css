@@ -1,0 +1,60 @@
+/*Seletor Universal*/
+* {
+    border: 1px solid red;
+}
+
+li>a {
+    color: rgb(176, 9, 209);
+    text-decoration: none;
+}
+
+span>a {
+    color: orange;
+    text-decoration: none;
+}
+
+div a {
+    color: rgb(252, 160, 236);
+    text-decoration: none;  
+    }
+
+
+h3 {
+    color: green;
+
+}
+
+.verde {
+    color: rgb(0, 95, 0);
+}   
+
+p.verde{
+    color: rgb(255, 165, 47);
+}
+
+#cabecalho {
+    background-color: rgb(200, 200, 200);
+    border: 2px solid black;
+    padding: 10px;
+    margin-bottom: 20px;
+} 
+
+h1 {
+    color: rgb(182, 6, 252);
+    background-color: rgb(240, 160, 160);
+}
+
+h1+p{
+    color:coral;
+}
+
+h2 {
+    color: rgb(255, 0, 0);
+    background-color: rgb(160, 240, 160);
+}
+
+h2~p{
+    color:rgb(19, 156, 190);
+}   
+
+
