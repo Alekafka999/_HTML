@@ -12,7 +12,6 @@ body {
 
 #area-cabecalho {
     background-color: #f7b600;
-    color: white;
     text-align: center;
     padding: 15px;
 }
@@ -22,16 +21,10 @@ body {
 }
 
 #area-principal {
-    background: white;
     width: 920px;
     margin: 0 auto;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    justify-content: center;
-}
-
-#area-postagem, #area-lateral {
-    background: orange;
+    padding: 15px;
+    
 }
 
 #area-postagem {
@@ -40,41 +33,92 @@ body {
 }
 
 #area-lateral {
-    width: 240px;
+    width: 220px;
     float: right;
-    
+           
 }
 
 .postagem{
-    
+    padding: 20px;
+    margin-bottom: 0;
+    background: white;
 }
-#rodape {
-    clear: both;
-    text-align: center;
-    padding: 15px;
-    background: #CCC;
-    
+
+.conteudo-lateral {
+    background: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: right;
 }
+
 
 a {
     text-decoration: none;
 }
 
 a:link, a:visited {
+    color: #f7b600;
+    
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#area-cabecalho a:link, #area-cabecalho a:visited {
     color: white;
     padding: 8px 12px;
     font-weight: bold;
+
 }
 
-a:hover{
+#area-cabecalho a:hover {
     color: #f7b600;
     background-color: white;
+    text-decoration: none;
 }
+
 h1{
     color: #4e4e4e;
     font-size: 2.5em;
 }
 
+h2 {
+    color: #f7b600;
+   
+}
+
+h3 {
+    color: #565656;
+    background: #CCC;
+    padding: 5px;
+
+}
+
+.data-postagem{
+    font-size: 0.8em;
+    border-bottom: 1px solid gray;
+    color: gray;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
 .branco {
     color: white;
+}
+
+.postagem-lateral {
+    font-size: 0.8em;
+    padding: 5px;
+    border-bottom: 1px dotted #CCC;
+    
+}
+
+#rodape {
+    clear: both;
+    text-align: center;
+    padding: 15px;
+    background: #CCC;
+    
 }
