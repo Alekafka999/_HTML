@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Caos Controlado — Parça Corp</title>
+
+<style>
+
+/* ===== RESET BÁSICO ===== */
+body {
+    background: #111;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* TÍTULO GLITTER */
+h1 {
+    font-size: 3rem;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 
+                 0 0 20px #ff00ff,
+                 0 0 35px #ff00ff;
+    animation: brilho 1s alternate infinite;
+}
+
+@keyframes brilho {
+    from { opacity: 0.5; }
+    to   { opacity: 1; }
+}
+
+/* ===== BOTÃO VAIDOSO ===== */
+button {
+    background: #6200ea;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #9c27b0;
+    transform: scale(1.2) rotate(3deg);
+    box-shadow: 0 0 20px #9c27b0;
+}
+
+/* ===== QUADRADO GIRATÓRIO ===== */
+.logo {
+    width: 120px;
+    height: 120px;
+    margin: 40px auto;
+    background: linear-gradient(45deg, #ff00cc, #6600ff);
+    border-radius: 15px;
+    animation: gira 2s linear infinite;
+}
+
+@keyframes gira {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* ===== AVISO TREME-TREME ===== */
+.alerta {
+    margin: 40px auto;
+    width: 280px;
+    padding: 20px;
+    background: red;
+    border-radius: 10px;
+    font-weight: bold;
+    animation: treme 0.15s infinite;
+}
+
+@keyframes treme {
+    0%   { transform: translate(0); }
+    25%  { transform: translate(-4px, 4px); }
+    50%  { transform: translate(4px, -4px); }
+    75%  { transform: translate(-4px, -4px); }
+    100% { transform: translate(0); }
+}
+
+/* ===== TEXTO QUE SURGE EM FADE ===== */
+.fade {
+    font-size: 1.3rem;
+    opacity: 0;
+    animation: aparece 3s forwards;
+}
+
+@keyframes aparece {
+    0% { opacity: 0; }
+    40% { opacity: 0.2; }
+    70% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Caos Controlado da Parça Corp</h1>
+
+<div class="logo"></div>
+
+<button>Clique em Mim, Comandante!</button>
+
+<div class="alerta">
+    ALERTA: Existe uma &lt;div&gt; aberta em algum lugar!
+</div>
+
+<p class="fade">
+    Esse é o poder da Comandante no CSS:  
+    caos, glitter e elegância simultânea.
+</p>
+
+</body>
+</html>
