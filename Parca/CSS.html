@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>SPA de CSS da Parça</title>
+  <style>
+    /* 🎨 Paleta básica com variáveis (pra brincar depois) */
+    :root {
+      --cor-bg: #0f172a;           /* fundo escuro chique */
+      --cor-card: #111827;        /* card um pouco mais claro */
+      --cor-acento: #38bdf8;      /* azul ciano fofinho */
+      --cor-acento-hover: #0ea5e9;
+      --cor-texto: #e5e7eb;
+      --cor-texto-suave: #9ca3af;
+      --radius-grande: 18px;
+      --sombra-card: 0 18px 40px rgba(0, 0, 0, 0.45);
+      --duracao-transicao: 0.25s;
+    }
+
+    /* Reset leve pra tirar margens padrões feiosas */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1d2940, #020617);
+      color: var(--cor-texto);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 960px;
+      width: 100%;
+      display: grid;
+      gap: 24px;
+    }
+
+    .titulo {
+      text-align: center;
+    }
+
+    .titulo h1 {
+      font-size: 2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cor-texto);
+    }
+
+    .titulo p {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: var(--cor-texto-suave);
+    }
+
+    /* Layout dos cards */
+    .linha-cards {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .card {
+      background: linear-gradient(145deg, #020617, var(--cor-card));
+      border-radius: var(--radius-grande);
+      padding: 20px 20px 18px;
+      box-shadow: var(--sombra-card);
+      border: 1px solid rgba(148, 163, 184, 0.13);
+      position: relative;
+      overflow: hidden;
+      transition:
+        transform var(--duracao-transicao) ease,
+        box-shadow var(--duracao-transicao) ease,
+        border-color var(--duracao-transicao) ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right,
+        rgba(56, 189, 248, 0.28),
+        transparent 55%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--duracao-transicao) ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+      border-color: rgba(56, 189, 248, 0.6);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-titulo {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--cor-texto-suave);
+    }
+
+    .card-texto {
+      font-size: 0.9rem;
+      color: var(--cor-texto-suave);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    /* Botão relax */
+    .botao-parca {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: radial-gradient(circle at top left,
+        rgba(56, 189, 248, 0.25),
+        rgba(15, 23, 42, 0.9));
+      color: var(--cor-texto);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition:
+        transform var(--duracao-transicao) ease,
+        box-shadow var(--duracao-transicao) ease,
+        border-color var(--duracao-transicao) ease,
+        background var(--duracao-transicao) ease;
+    }
+
+    .botao-parca span.icone {
+      font-size: 1rem;
+      transform: translateY(1px);
+      transition: transform var(--duracao-transicao) ease;
+    }
+
+    .botao-parca:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.9);
+      border-color: var(--cor-acento);
+      background: radial-gradient(circle at top left,
+        rgba(56, 189, 248, 0.4),
+        rgba(15, 23, 42, 1));
+    }
+
+    .botao-parca:hover span.icone {
+      transform: translate(3px, 1px);
+    }
+
+    .rodape {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--cor-texto-suave);
+      margin-top: 8px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="titulo">
+      <h1>SPA de CSS da Parça</h1>
+      <p>Ambiente seguro para humanos cansados de PHP brincarem com estilo sem dor.</p>
+    </header>
+
+    <section class="linha-cards">
+      <article class="card">
+        <div class="card-titulo">
+          <span>🎨 Botão Relax</span>
+          <span class="badge">hover suave</span>
+        </div>
+        <p class="card-texto">
+          Este botão é seu fidget toy digital: passa o mouse, vê a sombra, sente a paz
+          interior do <code>border-radius</code> bem aplicado.
+        </p>
+        <a href="#" class="botao-parca">
+          <span class="icone">⚡</span>
+          <span>Clicar só por esporte</span>
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="card-titulo">
+          <span>📦 Card Terapêutico</span>
+          <span class="badge">box-shadow</span>
+        </div>
+        <p class="card-texto">
+          Aqui você contempla o poder de um <code>box-shadow</code> bem dosado,
+          um gradiente tímido e o abraço quentinho de um <code>border-radius</code> grande.
+        </p>
+        <a href="#" class="botao-parca">
+          <span class="icone">💆‍♀️</span>
+          <span>Respirar e rolar o mouse</span>
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="card-titulo">
+          <span>🧩 Layout Zen</span>
+          <span class="badge">grid</span>
+        </div>
+        <p class="card-texto">
+          A linha de cards usa <code>display: grid</code> com
+          <code>auto-fit</code> e <code>minmax()</code> para se adaptar.
+          Sem treta, sem media query por enquanto.
+        </p>
+        <a href="#" class="botao-parca">
+          <span class="icone">🧘‍♀️</span>
+          <span>Deixar o CSS respirar</span>
+        </a>
+      </article>
+    </section>
+
+    <footer class="rodape">
+      Feito por Parça &amp; Enguia Elétrica Sênior – edição “CSS para relaxar”.
+    </footer>
+  </main>
+</body>
+</html>

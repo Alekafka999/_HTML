@@ -9,5 +9,44 @@
 .conteudo2{
     margin: 5 px;
     width: 150px;
-    border: 1px solid red;+
+    border: 1px solid red;
+}
+
+/***** Barra de Navegação Vertical ****/
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+
+ul a{
+    /*border: 1px solid red;*/
+    width: 200px;
+    height: 40px;
+    display: block;
+    color: #000;
+    text-decoration: none;
+    text-indent: 40px;
+    line-height: 40px;
+    background: #f7b600 url(imagens/menu.png) no-repeat left bottom;
+
+
+}
+
+a:hover, .selecionado a {
+    background-position: right bottom;
+    background-color: #f99200;
+    color: #fff;
+}
+
+#home #navegacao .home a,
+#sobre #navegacao .sobre a,
+#servicos #navegacao .servicos a,
+#news #navegacao .news a,
+#contato #navegacao .contato a {
+    background-position: right bottom;
+    background-color: #f99200;
+    color: #fff;
 }
