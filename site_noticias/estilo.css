@@ -188,7 +188,7 @@ img.imagem-principal {
 h3 {
     text-transform: uppercase;
     display: inline;
-    font-size: o.8em;
+    font-size: 0.8em;
     padding: 3px;
 }
 
@@ -202,6 +202,37 @@ h3 {
     background: #de0033;
     color: #000;
 
+}
+
+/* Lista de Notícias */
+#lista-noticias li {
+    padding: 2px;
+    border-bottom: 1px solid #ccc;
+    height: 62px;   
+}
+#lista-noticias li a img {
+    float: left;
+    margin: 5px;
+ 
+}
+
+#lista-noticias li a {
+    text-decoration: none;
+    
+}
+#lista-noticias li a h3 {
+    font-size: 0.8em;
+    padding: 0;
+    color: #3e7ab9;
+    
+}
+
+#lista-noticias li a p {
+   font-size: 0.7em;
+}
+
+#lista-noticia li:hover {
+    background: #b10404;
 }
 
 
